@@ -1,0 +1,145 @@
+html {
+  font-size: 62.5%;
+}
+
+body {
+  overflow-x: hidden;
+  font-size: 1.6rem;
+}
+
+.part-1 {
+  color: white;
+  background-color: #b7384e;
+  font-family: "Arial Black", sans-serif;
+}
+.part-1 header button {
+  color: white;
+  background: none;
+  padding: 7px 15px;
+  border: none;
+  outline: none;
+}
+.part-1 header button:last-of-type {
+  color: #b7384e;
+  border-radius: 999px;
+  background: white;
+}
+.part-1 .part-1_1 h1:last-of-type {
+  transform: translateY(5em);
+}
+.part-1 .part-1_1 .img {
+  text-align: center;
+}
+.part-1 .part-1_2 {
+  text-align: center;
+}
+.part-1 .part-1_2 button {
+  color: white;
+  background: #087ceb;
+  padding: 7px 15px;
+  border: none;
+  border-radius: 99px;
+  outline: none;
+}
+
+.part-2 {
+  height: 100vh;
+  background-image: url("/img/bg.png");
+  background-color: #b4b3b3;
+}
+.part-2 form {
+  background-color: white;
+  position: relative;
+  min-width: 280px;
+  width: 450px;
+  border-radius: 10px;
+  padding: 1em 2em;
+  margin-bottom: 2em;
+}
+.part-2 form header {
+  text-align: center;
+}
+.part-2 form header img {
+  max-width: 90px;
+  max-height: 90px;
+}
+.part-2 form header h2 {
+  font-family: "Arial Black";
+  font-size: 2em;
+  color: #b7384e;
+}
+.part-2 form .form-group {
+  position: relative;
+  margin-top: 10px;
+  width: 100%;
+}
+.part-2 form .form-group label {
+  position: absolute;
+  pointer-events: none;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  transition: 0.4s ease-out;
+}
+.part-2 form .form-group input {
+  display: block;
+  width: 100%;
+  padding: 10px 0;
+  border: none;
+  outline: none;
+  background: none;
+  border-bottom: 3px solid black;
+  transition: 0.4s ease-out;
+}
+.part-2 form .form-group i {
+  position: absolute;
+  top: 50%;
+  right: 5%;
+  transform: translateY(-50%);
+  color: #b7384e;
+}
+.part-2 form .form-group:focus-within label,
+.part-2 form .form-group.animation label {
+  top: 0;
+  font-size: smaller;
+  transform: translateY(-50%);
+  color: #b7384e;
+}
+.part-2 form .form-group:focus-within input,
+.part-2 form .form-group.animation input {
+  border-bottom: 3px solid #b7384e;
+}
+.part-2 form .form-buttons {
+  text-align: center;
+}
+.part-2 form .form-buttons button {
+  border: none;
+  outline: none;
+  border-radius: 99px;
+  font-weight: bolder;
+  background: #087ceb;
+  color: white;
+}
+.part-2 form .form-buttons p {
+  font-size: small;
+  color: #b7384e;
+  font-weight: bold;
+}
+.part-2 form .form-buttons button:first-of-type {
+  width: 11em;
+  font-size: 1.2em;
+  padding: 0.5em 1em;
+}
+.part-2 form .form-buttons button:last-of-type {
+  width: 9em;
+  font-size: small;
+  padding: 0.5em 1em;
+}
+.part-2 form.login-mode .logup {
+  display: none;
+}
+.part-2 form.logup-mode .logup {
+  display: block;
+}
+
+/*# sourceMappingURL=connect.css.map */
