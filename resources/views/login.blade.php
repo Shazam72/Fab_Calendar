@@ -22,17 +22,17 @@
             </header>
             <section class="pt-5 row part-1_1 justify-content-center">
                 <div class="text offset-md-1 col-md-5 col-lg-5 col-xs-12 col-sm-12">
-                <h1> Avec Fab Calendar, <br> 
+                <h1 class=""> Avec Fab Calendar, <br> 
                         planifiez vos jours de cours en vous <br>
                         réservant un accès à la salle de travail
                 </h1>
 
-                <h1>Vite !!! Connectez-vous pour voir les différents <br>
+                <h1 class="mt-5">Vite !!! Connectez-vous pour voir les différents <br>
                         jours et plages horaires disponibles
                 </h1>
                 </div>
                 <div class="img col-md-6 col-lg-6 col-xs-12 col-sm-12">
-                    <img src="/" alt="">
+                    <img src="/img/welcome-img.svg" alt="">
                 </div>
             </section>
             <section class="part-1_2 mt-5">
@@ -50,10 +50,6 @@
                     <img src="/img/logo2.png" alt="">
                     <h2>Connection</h2>
                 </header>
-                <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="email" name="email" id="email" autocomplete="off">
-                </div>
                 <div class="form-group logup">
                     <label for="nom">Nom</label>
                     <input type="text" name="nom" id="nom" autocomplete="off">
@@ -61,6 +57,10 @@
                 <div class="form-group logup">
                     <label for="prenom">Prénom</label>
                     <input type="text" id="prenom" name="prenom" autocomplete="off">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" name="email" id="email" autocomplete="off">
                 </div>
                 <div class="form-group logup">
                     <label for="formasuiv">Formation Suivie</label>

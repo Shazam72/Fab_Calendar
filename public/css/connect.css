@@ -24,11 +24,10 @@ body {
   border-radius: 999px;
   background: white;
 }
-.part-1 .part-1_1 h1:last-of-type {
-  transform: translateY(5em);
-}
 .part-1 .part-1_1 .img {
+  display: block;
   text-align: center;
+  min-width: 250px;
 }
 .part-1 .part-1_2 {
   text-align: center;
@@ -140,6 +139,38 @@ body {
 }
 .part-2 form.logup-mode .logup {
   display: block;
+}
+
+@media screen and (max-width: 700px) {
+  .part-1 .part-1_1 h1 {
+    text-align: center;
+  }
+
+  .part-1 .part-1_1 img {
+    width: 60vw;
+    height: auto;
+    min-height: 0;
+  }
+
+  .part-2 form {
+    transform: translateY(50px);
+    width: 80vw;
+  }
+}
+@media screen and (max-width: 400px) {
+  html {
+    font-size: 40.5%;
+  }
+
+  .part-1 .part-1_1 img {
+    width: 60vw;
+    height: auto;
+    min-height: 0;
+  }
+
+  .part-2 form {
+    width: 80vw;
+  }
 }
 
 /*# sourceMappingURL=connect.css.map */
