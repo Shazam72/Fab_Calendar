@@ -10,7 +10,6 @@
     <title>Login - Fab Calendar</title>
 </head>
 <body>
-    
     <div class="inner-page">
         <section class="part-1">
             <header class="container-fluid d-flex justify-content-between align-items-center">
