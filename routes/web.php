@@ -1,10 +1,13 @@
 <?php
 
+use App\Http\Controllers\UsersController;
+use App\Models\Statut;
 use Illuminate\Support\Facades\Route;
 
 
 //Routes généralisées
-Route::view('/login','login');
+Route::get('/login',[UsersController::class,'getFormations_login'])->name('login_form');
+Route::post('/login',[UsersController::class,'verify_form'])->name('login_treat');
 
 //Routes administrateur
 Route::view('/admin','admin.home');

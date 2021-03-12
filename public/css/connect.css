@@ -72,7 +72,7 @@ body {
   margin-top: 10px;
   width: 100%;
 }
-.part-2 form .form-group label {
+.part-2 form .form-group label:not(#formasuiv_label) {
   position: absolute;
   pointer-events: none;
   top: 50%;
@@ -90,6 +90,10 @@ body {
   border-bottom: 3px solid black;
   transition: 0.4s ease-out;
 }
+.part-2 form .form-group .error-msg {
+  font-size: smaller;
+  color: red;
+}
 .part-2 form .form-group i {
   position: absolute;
   top: 50%;
@@ -97,8 +101,8 @@ body {
   transform: translateY(-50%);
   color: #b7384e;
 }
-.part-2 form .form-group:focus-within label,
-.part-2 form .form-group.animation label {
+.part-2 form .form-group:focus-within label:not(#formasuiv_label),
+.part-2 form .form-group.animation label:not(#formasuiv_label) {
   top: 0;
   font-size: smaller;
   transform: translateY(-50%);
