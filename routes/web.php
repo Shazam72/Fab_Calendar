@@ -1,7 +1,6 @@
 <?php
 
 use App\Http\Controllers\UsersController;
-use App\Models\Statut;
 use Illuminate\Support\Facades\Route;
 
 
