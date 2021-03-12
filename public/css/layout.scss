@@ -1,0 +1,87 @@
+html {
+    font-size: 62.5%;
+}
+body {
+    font-size: 1.6rem;
+    width: 100vw;
+    max-width: 1500px;
+    background: url("/img/bg.png"), #b4b3b3b6;
+}
+li{
+    list-style: none;
+}
+header {
+    background-color: #b7384e;
+    color: white;
+    max-height: 17em;
+
+    .inner-header{
+        max-width: 1500px;
+        position: relative;
+    }
+    .logo img{
+        min-width: 5em;
+        min-height: 5em;
+        width: 6em;
+        height: 6em;
+    }
+
+    >div nav ul li a{
+        text-decoration: none;
+        position: relative;
+        color: white;
+        font-size: 2.3em;
+    }
+    >div nav ul li:first-of-type a::before{
+        content: '4';
+        position: absolute;
+        display: flex;
+        top: 0.4em;
+        right: -.2em;
+        justify-content: center;
+        align-items: center;
+        width: 1.2em;
+        height: 1.2em;
+        font-size: .5em;
+        border-radius: 50%;
+        border: 2px solid #b7384e;
+        font-weight: bolder;
+        font-family: "Arial Black";
+        color: #b7384e;
+        background-color: #fff;
+    }
+    .days-panel{
+        color: #b7384e;
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        background: #f1f1f1;
+        border: 2px solid #b7384e;
+        border-radius: 10em;
+        transform: translate(-50%,100%);
+        font-size: 1.2em;
+
+        ul li span{
+            cursor: pointer;
+            
+        }
+        ul li:not(:last-of-type){
+            border-right:2px solid #b7384e ;
+        }
+    }
+
+}
+section.main-section{
+    max-width: 1500px;
+}
+footer{
+    background-color: #b7384e;
+    color: white;
+    height: 5em;
+    max-height: 17em;
+    color: rgba(255, 255, 255, 0.5);
+
+    .inner-footer{
+        max-width: 1500px;
+    }
+}

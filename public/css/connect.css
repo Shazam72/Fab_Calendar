@@ -24,11 +24,10 @@ body {
   border-radius: 999px;
   background: white;
 }
-.part-1 .part-1_1 h1:last-of-type {
-  transform: translateY(5em);
-}
 .part-1 .part-1_1 .img {
+  display: block;
   text-align: center;
+  min-width: 250px;
 }
 .part-1 .part-1_2 {
   text-align: center;
@@ -73,7 +72,7 @@ body {
   margin-top: 10px;
   width: 100%;
 }
-.part-2 form .form-group label {
+.part-2 form .form-group label:not(#formasuiv_label) {
   position: absolute;
   pointer-events: none;
   top: 50%;
@@ -91,6 +90,10 @@ body {
   border-bottom: 3px solid black;
   transition: 0.4s ease-out;
 }
+.part-2 form .form-group .error-msg {
+  font-size: smaller;
+  color: red;
+}
 .part-2 form .form-group i {
   position: absolute;
   top: 50%;
@@ -98,8 +101,8 @@ body {
   transform: translateY(-50%);
   color: #b7384e;
 }
-.part-2 form .form-group:focus-within label,
-.part-2 form .form-group.animation label {
+.part-2 form .form-group:focus-within label:not(#formasuiv_label),
+.part-2 form .form-group.animation label:not(#formasuiv_label) {
   top: 0;
   font-size: smaller;
   transform: translateY(-50%);
@@ -140,6 +143,38 @@ body {
 }
 .part-2 form.logup-mode .logup {
   display: block;
+}
+
+@media screen and (max-width: 700px) {
+  .part-1 .part-1_1 h1 {
+    text-align: center;
+  }
+
+  .part-1 .part-1_1 img {
+    width: 60vw;
+    height: auto;
+    min-height: 0;
+  }
+
+  .part-2 form {
+    transform: translateY(50px);
+    width: 80vw;
+  }
+}
+@media screen and (max-width: 400px) {
+  html {
+    font-size: 40.5%;
+  }
+
+  .part-1 .part-1_1 img {
+    width: 60vw;
+    height: auto;
+    min-height: 0;
+  }
+
+  .part-2 form {
+    width: 80vw;
+  }
 }
 
 /*# sourceMappingURL=connect.css.map */
