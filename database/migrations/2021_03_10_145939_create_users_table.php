@@ -20,7 +20,7 @@ class CreateUsersTable extends Migration
             $table->text('password');
             $table->integer('formasuiv')->nullable();
             $table->string('role')->default('apprenant');
-            $table->integer('status')->default();
+            $table->integer('status')->foreign;
             $table->timestamps();
         });
     }
