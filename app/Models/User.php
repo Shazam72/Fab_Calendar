@@ -20,4 +20,14 @@ class User extends Model implements Authenticatable
         'status',
         'role'
     ];
+
+    public function statut(){
+        return $this->belongsTo('App\Models\Statut');
+    }
+    public function formasuiv(){
+        return $this->belongsTo('App\Models\Formasuiv');
+    }
+    public function reservation_apprenant(){
+        return $this->hasMany('App\Models\Reservation_apprenant');
+    }
 }
