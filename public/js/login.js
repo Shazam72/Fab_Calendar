@@ -19,6 +19,34 @@ $(".form-group i").click((e) => {
 });
 
 //dynamisme/ & traitement du formulaire
+
+let change_form = (for_mode) => {
+    if (for_mode == "logup") {
+        $("form header h2").text("Inscription");
+        $("form").removeClass("login-mode");
+        $("form").addClass("logup-mode");
+    } else {
+        $("form header h2").text("Connection");
+        $("form").removeClass("logup-mode");
+        $("form").addClass("login-mode");
+    }
+    $(".form-buttons button:first-of-type").removeClass("active");
+    $(".form-buttons button:first-of-type").before(
+        $(".form-buttons button:last-of-type")
+    );
+    $(".form-buttons button:last-of-type").before($(".form-buttons p"));
+    $(".form-buttons button:first-of-type").addClass("active");
+};
+
+$("form input,form select").keyup(function () {
+    this.parentNode.querySelector(".error-msg").innerText = "";
+});
+
+if (/logup/.test(window.location.href)) {
+    $("head title").text("Logup - Fab Calendar");
+    change_form("logup");
+}
+
 $(".form-buttons button").click((e) => {
     e.preventDefault();
     if (e.target.classList.contains("active")) {
@@ -49,14 +77,46 @@ $(".form-buttons button").click((e) => {
         })
             .then((resp) => {
                 try {
-                    return resp.json()
+                    return resp.json();
                 } catch (error) {
                     throw error;
                 }
-                
             })
             .then((resp) => {
-                if (resp && resp.length != 0) {
+                if (resp == "alreadyInDB")
+                    swal({
+                        title: "Compte déja existant!",
+                        text:
+                            "Vous possédez déja un copmte! Connectez-vous pour y accéder",
+                        icon: "info",
+                        button: "OK",
+                    }).then(() => {
+                        document
+                            .querySelectorAll("form input")
+                            .forEach((input) => {
+                                input.value = "";
+                            });
+                        change_form("login");
+                    });
+                else if (resp == "saved")
+                    swal({
+                        title: "Compte creé avec succès!",
+                        text:
+                            "Veuillez vérifier votre boîte e-mail afin de confirmer votre inscription",
+                        icon: "success",
+                        button: "OK",
+                    });
+                else if (resp == "unavalaible")
+                    swal({
+                        title: "Identifiants invalides!",
+                        text:
+                            "Veuillez réessayer en entrant des informations correctes s'il vous plaît",
+                        icon: "error",
+                        button: "OK",
+                    });
+                else if (resp.text == "connected")
+                    window.location.href = resp.link;
+                else if (resp && resp.length != 0) {
                     $(".error-msg.email").text(resp.email);
                     $(".error-msg.password").text(resp.password);
                     $(".error-msg.password_confirmation").text(
@@ -66,25 +126,15 @@ $(".form-buttons button").click((e) => {
                     $(".error-msg.prenom").text(resp.prenom);
                     $(".error-msg.formasuiv").text(resp.formasuiv);
                 }
-            }).catch((e)=>{
-                console.log(e);
             })
+            .catch((e) => {
+                console.log(e);
+            });
     } else {
         if (e.target.classList.contains("login-button")) {
-            $("form header h2").text("Connection");
-            $("form").removeClass("logup-mode");
-            $("form").addClass("login-mode");
+            change_form("login");
         } else {
-            $("form header h2").text("Inscription");
-            $("form").removeClass("login-mode");
-            $("form").addClass("logup-mode");
+            change_form("logup");
         }
-
-        $(".form-buttons button").removeClass("active");
-        e.target.classList.add("active");
-        $(".form-buttons button:first-of-type").before(
-            $(".form-buttons button:last-of-type")
-        );
-        $(".form-buttons button:last-of-type").before($(".form-buttons p"));
     }
 });

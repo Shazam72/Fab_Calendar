@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Validator;
 
 class UsersController extends Controller
 {
-    public static function getFormations_login()
+    public static function login_logup()
     {
         $formations = Formasuiv::all();
         return view('login', [
@@ -28,7 +28,10 @@ class UsersController extends Controller
             if ($validator->fails())
                 return $validator->errors();
 
-            $this->connect();
+            if ($this->connect())
+                return json_encode(['text' => 'connected', 'link' => route('home')]);
+            else
+                return json_encode('unavalaible');
         } elseif (count(request()->all()) == 7) {
             $validator = Validator::make(request()->all(), [
                 'nom' => ['required'],
@@ -52,16 +55,16 @@ class UsersController extends Controller
 
     public function createAccount()
     {
-        $users = array(User::where('email', request('email'))->first());
-        if (count($users) != 0)
-            die('alreadyInDB');
+        $users = User::where('email', request('email'))->get()->toArray();
+        if (count($users) >= 1)
+            die(json_encode('alreadyInDB'));
         else {
             User::create([
                 'nom' => request('nom'),
                 'prenom' => request('prenom'),
-                'email' => request('email'),
+                'email' => strtolower(request('email')),
                 'password' => bcrypt(request('password')),
-                'formasuiv' => request('formasuiv')
+                'formasuiv_id' => request('formasuiv')
             ]);
             return 'saved';
         }
