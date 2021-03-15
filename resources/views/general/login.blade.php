@@ -42,7 +42,7 @@
 
                 </div>
                 <div class="form-group logup">
-                    <label for="formasuiv" id="formasuiv_label">Formation Suivie</label>
+                    <label for="formasuiv" id="formasuiv_label">Formation Suivie :</label>
                     <select type="text" id="formasuiv" name="formasuiv" autocomplete="off">
                         @foreach($formations as $formation)
                         <option value="{{$formation->id}}">{{$formation->formation}}</option>

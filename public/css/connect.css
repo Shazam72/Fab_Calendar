@@ -40,6 +40,26 @@ body {
   border-radius: 99px;
   outline: none;
 }
+.part-1 section.confirm {
+  width: 50vw;
+  height: 50vh;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.part-1 section.confirm h4,
+.part-1 section.confirm p {
+  border: 1px solid #40ca8a60;
+  border-top: none;
+  box-shadow: 5px 5px 5px #1987545d;
+}
+.part-1 section.confirm h4 {
+  margin-bottom: 0 !important;
+  font-size: 1.5em;
+  padding: 1em 0;
+  border-radius: 1em 1em 0 0;
+}
 
 .part-2 {
   height: 100vh;
@@ -143,6 +163,13 @@ body {
 }
 .part-2 form.logup-mode .logup {
   display: block;
+}
+
+footer {
+  color: rgba(255, 255, 255, 0.438);
+  background: #b7384e;
+  position: absolute;
+  bottom: 0;
 }
 
 @media screen and (max-width: 700px) {

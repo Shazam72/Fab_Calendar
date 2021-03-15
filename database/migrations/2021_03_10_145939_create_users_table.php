@@ -21,7 +21,8 @@ class CreateUsersTable extends Migration
             $table->text('password');
             $table->unsignedInteger('formasuiv_id')->nullable();
             $table->string('role')->default('apprenant');
-            $table->unsignedInteger('statut_id')->default('1');
+            $table->unsignedInteger('statut_id')->nullable();
+            $table->string('validation_token')->nullable();
             $table->timestamps();
         });
     }
