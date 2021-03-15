@@ -9,9 +9,13 @@ use Illuminate\Support\Facades\Validator;
 
 class UsersController extends Controller
 {
-    public static function login_logup()
+    public function login_logup()
     {
-        $formations = Formasuiv::all();
+        try {
+            $formations = Formasuiv::all();
+        } catch (\Throwable $e) {
+            return view('errors.DB');
+        }
         return view('login', [
             'formations' => $formations
         ]);
@@ -47,8 +51,9 @@ class UsersController extends Controller
             try {
                 $isCreated = $this->createAccount();
             } catch (\Throwable $th) {
-                die($th);
+                return view('DB');
             }
+            
             return $isCreated;
         }
     }
@@ -66,14 +71,14 @@ class UsersController extends Controller
                 'password' => bcrypt(request('password')),
                 'formasuiv_id' => request('formasuiv')
             ]);
-            return 'saved';
+            return json_encode('saved');
         }
     }
 
     public function connect()
     {
         return Auth::attempt([
-            'email' => request('email'),
+            'email' => strtolower(request('email')),
             'password' => request('password')
         ]);
     }

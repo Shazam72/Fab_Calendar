@@ -92,9 +92,9 @@ $(".form-buttons button").click((e) => {
                         button: "OK",
                     }).then(() => {
                         document
-                            .querySelectorAll("form input")
+                            .querySelectorAll("form .form-group input")
                             .forEach((input) => {
-                                input.value = "";
+                                if (input.name) input.value = "";
                             });
                         change_form("login");
                     });
@@ -105,6 +105,13 @@ $(".form-buttons button").click((e) => {
                             "Veuillez vérifier votre boîte e-mail afin de confirmer votre inscription",
                         icon: "success",
                         button: "OK",
+                    }).then(() => {
+                        document
+                            .querySelectorAll("form .form-group input")
+                            .forEach((input) => {
+                                if (input.name) input.value = "";
+                            });
+                        change_form("login");
                     });
                 else if (resp == "unavalaible")
                     swal({

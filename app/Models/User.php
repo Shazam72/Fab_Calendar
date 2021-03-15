@@ -11,23 +11,26 @@ class User extends Model implements Authenticatable
 {
     use AuthAuthenticatable;
     use HasFactory;
-    protected $fillable=[
+    protected $fillable = [
         'nom',
         'prenom',
         'email',
         'password',
-        'formasuiv',
+        'formasuiv_id',
         'status',
         'role'
     ];
 
-    public function statut(){
+    public function statut()
+    {
         return $this->belongsTo('App\Models\Statut');
     }
-    public function formasuiv(){
+    public function formasuiv()
+    {
         return $this->belongsTo('App\Models\Formasuiv');
     }
-    public function reservation_apprenant(){
+    public function reservation_apprenant()
+    {
         return $this->hasMany('App\Models\Reservation_apprenant');
     }
 }
