@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateStatutsTable extends Migration
+class CreateReservationApprenantsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,12 @@ class CreateStatutsTable extends Migration
      */
     public function up()
     {
-        Schema::create('statuts', function (Blueprint $table) {
+        Schema::create('reservation_apprenants', function (Blueprint $table) {
             $table->id();
-            $table->string('statut_name');
+            $table->integer('user_id');
+            $table->integer('statut_id');
+            $table->integer('reservation_param_id');
+            $table->date('date_reservation');
             $table->timestamps();
         });
     }
@@ -27,6 +30,6 @@ class CreateStatutsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('statuts');
+        Schema::dropIfExists('reservation_apprenants');
     }
 }
