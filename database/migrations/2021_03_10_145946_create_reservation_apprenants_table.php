@@ -15,10 +15,10 @@ class CreateReservationApprenantsTable extends Migration
     {
         Schema::create('reservation_apprenants', function (Blueprint $table) {
             $table->id();
-            $table->string('email_apprenant');
-            $table->integer('status');
+            $table->string('user_id');
+            $table->integer('statut_id');
             $table->date('date_reservation');
-            $table->integer('ID_res_param');
+            $table->integer('reservation_param_id');
             $table->timestamps();
         });
     }

@@ -1,6 +1,23 @@
-@extends('layout')
-@section('title_page','Profile Apprenant | Fab Calendar')
+@extends('general.layout')
+
+@section('contenu')
+
+<h1>Profil</h1>
+<!-- -----------------à gérer avec la base de donnée--------- -->
+
+<div class="first_block">
+  <p> <strong>Informations personnelles <hr></strong> </p>
+</div>
 
 
-@section('notif_link',route('notif_appr'))
-@section('profile_link',route('profile_appr'))
+
+<div class="second_block">
+<p> <strong>Reservations<hr></strong> </p>
+</div>
+
+
+
+
+
+
+@endsection

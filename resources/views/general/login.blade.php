@@ -13,38 +13,6 @@
 
 <body>
     <div class="inner-page">
-        <section class="part-1">
-            <header class="container-fluid d-flex justify-content-between align-items-center">
-                <span class="logo"> <img src="{{asset('img/logo1.png')}}" alt=""></span>
-                <span class="login-up">
-                    <button class="logup">Inscription</button>
-                    <button class="login">Connexion</button>
-                </span>
-            </header>
-            <section class="pt-5 row part-1_1 justify-content-center">
-                <div class="text offset-md-1 col-md-5 col-lg-5 col-xs-12 col-sm-12">
-                    <h1 class=""> Avec Fab Calendar, <br>
-                        planifiez vos jours de cours en vous <br>
-                        réservant un accès à la salle de travail
-                    </h1>
-
-                    <h1 class="mt-5">Vite !!! Connectez-vous pour voir les différents <br>
-                        jours et plages horaires disponibles
-                    </h1>
-                </div>
-                <div class="img col-md-6 col-lg-6 col-xs-12 col-sm-12">
-                    <img src="/img/welcome-img.svg" alt="">
-                </div>
-            </section>
-            <section class="part-1_2 mt-5">
-                <button class="mt-2">Se connecter</button>
-                <div class="text mt-5">Vous n’avez pas de compte ? <br>
-                    Pas grave, vous pouvez toujours vous en créer un. <br>
-                    Il suffit cliquer ci-dessous
-                </div>
-                <button class="mt-1 mb-5">S'inscrire</button>
-            </section>
-        </section>
         <section class="part-2 forms-panel d-flex flex-column justify-content-center align-items-center">
             <form id="form" class="login-mode mt-5">
                 @csrf
@@ -74,10 +42,10 @@
 
                 </div>
                 <div class="form-group logup">
-                    <label for="formasuiv" id="formasuiv_label">Formation Suivie</label>
+                    <label for="formasuiv" id="formasuiv_label">Formation Suivie :</label>
                     <select type="text" id="formasuiv" name="formasuiv" autocomplete="off">
                         @foreach($formations as $formation)
-                            <option value="{{$formation->id}}">{{$formation->formation}}</option>
+                        <option value="{{$formation->id}}">{{$formation->formation}}</option>
                         @endforeach
                     </select>
 

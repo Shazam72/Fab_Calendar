@@ -8,4 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class Statut extends Model
 {
     use HasFactory;
+
+    public function reservation_apprenant(){
+        return $this->hasMany('App\Models\Reservation_apprenant');
+    }
+    public function user(){
+        return $this->hasMany('App\Models\User');
+    }
 }
