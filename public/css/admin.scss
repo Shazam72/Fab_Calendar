@@ -1,0 +1,210 @@
+/* ----------LAYOUT----------- */
+
+.icons{
+    float: right;
+    margin-top: 30px;
+  }
+  
+  .bell{
+    color: white;
+    height: 100px;
+    font-size: xx-large;
+    width: 50px;
+  
+  }
+  .users{
+    color: white;
+    font-size: xx-large;
+  }
+  
+  .conten{
+    height: 100vh;
+    background: url("/img/bg.png") ;  
+  }
+
+ .event{
+     background-color: #96283a;
+     height: 100px;
+
+}
+
+.event p{
+    text-align: center;
+    color: rgb(151, 150, 150);
+    padding-top: 40px;
+    
+}
+.block{
+    background-color: transparent;
+    height: 50px;
+    width: 550px;
+    border: 2px solid #b7384e;
+    border-radius: 30px;
+    display: flex;
+    margin-top: 10px;
+    margin: auto;
+    
+}
+
+.block ul ol{
+    display: inline;
+      
+}
+.block ul{
+    margin-top: 10px;
+}
+
+
+/* ----------------------ADMINISTRATION HOME PAGE------------------------------------------------ */
+
+
+
+.handle_account{
+    margin: 7rem auto;
+    background-color: white;
+    max-width: 55em;
+    border-radius:3rem;
+    box-shadow: rgb(218, 216, 216) .5rem .5rem 3rem;
+
+
+    h3{
+        cursor: pointer;
+        color:#b7384e ;
+        font-size: 1.5em;
+        border-radius:3rem 1rem 0 0;
+        background-color: rgba(128, 128, 128, 0.582);
+        opacity: .5;
+    }
+    h3:last-of-type{
+        border-radius:1rem 3rem 0 0;
+    }
+    h3.active{
+        opacity: 1;
+        background-color: white;
+    }
+
+    .btn{
+        font-size: 1.3rem;
+    }
+
+    .table,.stats{
+
+        display: none;
+    }
+    table{
+        
+        tr:nth-of-type(2n){
+            background-color: rgba(128, 128, 128, 0.11);
+        }
+    }
+
+    .contents .active{
+        display: initial;
+    }
+
+    .stats-content{
+        .stats div{
+            font-weight: bolder;
+            font-size: 2.8em;
+            border-radius: 50%;
+            border: 2px solid #b7384e;
+            width:3em;
+            height: 3em;
+
+            span{
+                font-size: small;
+            }
+
+        }
+    }
+    .stats button{
+        position: absolute;
+        right: 0;
+        bottom: 0;
+    }
+
+
+    
+
+}
+.form-reservation{
+    margin: 7rem auto;
+    background-color: white;
+    max-width: 55em;
+    border-radius:3rem;
+    box-shadow: rgb(218, 216, 216) .5rem .5rem 3rem;
+
+
+    h3{
+        color:#b7384e ;
+        font-size: 1.5em;
+    }
+
+    label,legend{
+        font-weight: bold;
+        color: #b7384e;
+    }
+    .hours{
+        position: relative;
+        
+    
+    
+        legend{
+            position: absolute;
+            top: .1rem;
+        }
+    }
+
+    button{
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        font-size: 1.5rem;
+    }
+}
+
+
+    
+
+
+
+/* ----------------------------profil.blade.php----------------------------- */
+
+.first_block{
+    background-color: white;
+    height: 300px;
+    width: 800px;
+    border-radius: 30px;
+    box-shadow: rgb(218, 216, 216) 5px 5px 30px;
+    margin: auto;
+}
+
+
+.first_block p{
+    color:#b7384e ;
+    text-align: center;
+    margin-top: 25px;
+    padding-right: 5px;
+}
+
+.second_block{
+    background-color: white;
+    height: 300px;
+    width: 800px;
+    border-radius: 30px;
+    box-shadow: rgb(218, 216, 216) 5px 5px 30px;
+    margin: auto;
+    
+}
+
+
+.second_block p{
+    color:#b7384e ;
+    text-align: center;
+    margin-top: 25px;
+    padding-right: 5px;
+}
+
+
+
+

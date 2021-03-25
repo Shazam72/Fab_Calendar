@@ -18,12 +18,11 @@
 
 <body class="d-flex justify-content-center align-items-center flex-column">
     <div class="errors">
-       <h1 class=""> UNE ERREUR EST SURVENUE AVEC LA BASE DONNEE. </h1>
+       <h1 class=""> UNE ERREUR EST SURVENUE. </h1>
         <h2>Veuillez essayer une des solutions ci-dessous</h2>
         <ul>
-            <li><h4>Relancer votre serveur ainsi que le système de gestion de base de données</h4></li>
-            <li><h4>Revenir a la dernier version du fichier</h4></li>
-            <li><h4>Redémmarez votre ordinateur</h4></li>
+            <li><h4>Renvoyez le formulaire</h4></li>
+            <li><h4>Vérifier votre connexion internet</h4></li>
         </ul>
     </div>
 </body>

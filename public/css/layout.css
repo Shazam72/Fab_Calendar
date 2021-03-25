@@ -3,8 +3,9 @@ html {
 }
 
 body {
+  overflow-x: hidden;
   font-size: 1.6rem;
-  width: 100vw;
+  width: 99.9vw;
   max-width: 1500px;
   background: url("/img/bg.png"), #b4b3b3b6;
 }
@@ -23,10 +24,40 @@ header .inner-header {
   position: relative;
 }
 header .logo img {
+  cursor: pointer;
   min-width: 5em;
   min-height: 5em;
   width: 6em;
   height: 6em;
+}
+header .avatar {
+  position: relative;
+  top: 0.7em;
+  height: 60%;
+  overflow: hidden;
+  border-radius: 50%;
+}
+header .avatar img {
+  cursor: pointer;
+  width: 3em;
+  height: 3em;
+}
+header div > nav {
+  position: relative;
+  right: 2rem;
+  bottom: -1em;
+}
+header a.logout-btn {
+  color: white;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+}
+header a.logout-btn :hover {
+  color: blue;
+}
+header .fa-sign-out-alt {
+  font-size: 1.5em;
 }
 header > div nav ul li a {
   text-decoration: none;
@@ -35,7 +66,7 @@ header > div nav ul li a {
   font-size: 2.3em;
 }
 header > div nav ul li:first-of-type a::before {
-  content: "4";
+  content: attr(data-count);
   position: absolute;
   display: flex;
   top: 0.4em;
@@ -59,7 +90,7 @@ header .days-panel {
   left: 50%;
   background: #f1f1f1;
   border: 2px solid #b7384e;
-  border-radius: 10em;
+  border-radius: 0 0 10em 10em;
   transform: translate(-50%, 100%);
   font-size: 1.2em;
 }
@@ -68,6 +99,14 @@ header .days-panel ul li span {
 }
 header .days-panel ul li:not(:last-of-type) {
   border-right: 2px solid #b7384e;
+}
+header nav ul li.active {
+  border-radius: 40% 40% 0 0;
+  color: #b7384e;
+  background: white;
+}
+header nav ul li.active a {
+  color: #b7384e;
 }
 
 section.main-section {
@@ -83,6 +122,34 @@ footer {
 }
 footer .inner-footer {
   max-width: 1500px;
+}
+
+.reservation_panel h5 {
+  font-size: 2em;
+}
+.reservation_panel .btn {
+  font-size: 1.6rem;
+}
+
+@media screen and (max-width: 500px) {
+  html {
+    font-size: 40%;
+  }
+
+  .inner-header .days-panel {
+    width: 100%;
+    border-radius: 0 0 1.2em 1.2em;
+  }
+}
+@media screen and (min-width: 500px) and (max-width: 950px) {
+  html {
+    font-size: 50%;
+  }
+
+  .inner-header .days-panel {
+    width: 80%;
+    border-radius: 0 0 1.2em 1.2em;
+  }
 }
 
 /*# sourceMappingURL=layout.css.map */

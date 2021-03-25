@@ -23,6 +23,7 @@ class CreateUsersTable extends Migration
             $table->string('role')->default('apprenant');
             $table->unsignedInteger('statut_id')->nullable();
             $table->string('validation_token')->nullable();
+            $table->string('avatars')->nullable();
             $table->timestamps();
         });
     }

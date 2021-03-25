@@ -12,7 +12,7 @@ class UsersController extends Controller
         return Auth::attempt([
             'email' => strtolower(request('email')),
             'password' => request('password'),
-            'statut_id'=>2
+            'statut_id'=>3
         ]);
     }
     public static function disconnect()

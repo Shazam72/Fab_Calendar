@@ -54,6 +54,10 @@ class User extends Model implements Authenticatable
         $this->attributes['formasuiv_id']=$value;
         $this->save();
     }
+    public function setAvatar($value){
+        $this->attributes['avatars']=$value;
+        $this->save();
+    }
 
 
 
