@@ -38,16 +38,16 @@ class dbcreate extends Command
      */
     public function handle()
     {
-        // $name=$this->argument('name') ?: config('myconfig.databaseinfos.dbname');
-        // $collation=config('myconfig.databaseinfos.db_collation','utf8mb4_unicode_ci');
-        // $charset=config('myconfig.databaseinfos.db_charset','utf8mb4');
+        $name=$this->argument('name') ?: config('myconfig.databaseinfos.dbname');
+        $collation=config('myconfig.databaseinfos.db_collation','utf8mb4_unicode_ci');
+        $charset=config('myconfig.databaseinfos.db_charset','utf8mb4');
 
-        // config(["database.connections.mysql.database" => null]);
+        config(["database.connections.mysql.database" => null]);
 
-        // DB::statement("CREATE DATABASE $name CHARACTER SET $charset COLLATE $collation");
+        DB::statement("CREATE DATABASE $name CHARACTER SET $charset COLLATE $collation");
 
-        // config(['database.connections.mysql.database.database'=> $name]);
+        config(['database.connections.mysql.database.database'=> $name]);
 
-        // echo "Database $name was created with success";
+        echo "Database $name was created with success";
     }
 }

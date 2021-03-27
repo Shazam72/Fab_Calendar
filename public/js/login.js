@@ -1,4 +1,10 @@
 // animation des champs du formulaire
+(function(){
+    Array.from($(".form-group input")).forEach(input => {
+        if(input.value!="")
+            input.parentNode.classList.add('animation')
+    });
+})();
 $(".form-group input").on("input", (e) => {
     if (e.target.value != "") e.target.parentNode.classList.add("animation");
     else if (e.target.value == "")
@@ -42,6 +48,12 @@ $("form input,form select").keyup(function () {
     this.parentNode.querySelector(".error-msg").innerText = "";
 });
 
+if (/modifier/.test(window.location.href)) {
+    $("head title").text("Modifier Infos - Fab Calendar");
+}
+if (/admin/.test(window.location.href)) {
+    $("head title").text("Administration - Fab Calendar");
+}
 if (/logup/.test(window.location.href)) {
     $("head title").text("Logup - Fab Calendar");
     change_form("logup");
@@ -87,7 +99,7 @@ $(".form-buttons button").click((e) => {
                     swal({
                         title: "Compte déja existant!",
                         text:
-                            "Vous possédez déja un copmte! Connectez-vous pour y accéder",
+                            "Vous possédez déja un copmte ? Connectez-vous pour y accéder",
                         icon: "info",
                         button: "OK",
                     }).then(() => {
@@ -121,6 +133,17 @@ $(".form-buttons button").click((e) => {
                         icon: "error",
                         button: "OK",
                     });
+                else if (resp.text=="modified") {
+                    swal({
+                        title: "Données enregistrées!",
+                        text:
+                            "Toutes les modifications que vous avez apporté ont été enregistées. Les identifiants de connections vous serviront lors de votre prochaine connection. ",
+                        icon: "success",
+                        button: "OK",
+                    }).then(() => {
+                        window.location.href = resp.link;
+                    });
+                }
                 else if (resp.text == "connected")
                     window.location.href = resp.link;
                 else if (resp && resp.length != 0) {
@@ -145,3 +168,76 @@ $(".form-buttons button").click((e) => {
         }
     }
 });
+$("form.admin button").click((e) => {
+    e.preventDefault();
+        let formdata = new FormData();
+        let form = document.querySelector("form");
+        formdata.append("_token", form._token.value);
+            formdata.append("nom", form.nom.value);
+            formdata.append("prenom", form.prenom.value);
+            formdata.append("email", form.email.value);
+            formdata.append("password", form.password.value);
+            formdata.append(
+                "password_confirmation",
+                form.password_confirmation.value
+            );
+        
+        fetch(e.target.dataset.target, {
+            method: "POST",
+            body: formdata,
+        })
+            .then((resp) => {
+                try {
+                    return resp.json();
+                } catch (error) {
+                    throw error;
+                }
+            })
+            .then((resp) => {
+                if (resp.msg == "saved")
+                    swal({
+                        title: "Compte creé avec succès!",
+                        text:
+                            "Veuillez vérifier votre boîte e-mail afin de confirmer votre inscription",
+                        icon: "success",
+                        button: "OK",
+                    }).then(() => {
+                        window.location.href = resp.link;
+                    });
+                else if (resp == "unavalaible")
+                    swal({
+                        title: "Identifiants invalides!",
+                        text:
+                            "Veuillez réessayer en entrant des informations correctes s'il vous plaît",
+                        icon: "error",
+                        button: "OK",
+                    });
+                else if (resp.text == "connected")
+                    window.location.href = resp.link;
+                else if (resp && resp.length != 0) {
+                    $(".error-msg.email").text(resp.email);
+                    $(".error-msg.password").text(resp.password);
+                    $(".error-msg.password_confirmation").text(
+                        resp.password_confirmation
+                    );
+                    $(".error-msg.nom").text(resp.nom);
+                    $(".error-msg.prenom").text(resp.prenom);
+                }
+            })
+            .catch((e) => {
+                console.log(e);
+            });
+});
+
+//dynamisme sur la sélection de la photo de profile
+$('form input[type="file"]').change(function(e){
+
+    let file= this.files[0];
+    let reader= new FileReader();
+    reader.onload=()=>{
+        this.parentNode.parentNode.querySelector('img').src=reader.result;
+    };
+    reader.readAsDataURL(file);
+
+});
+

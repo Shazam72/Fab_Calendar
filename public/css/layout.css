@@ -1,169 +1,155 @@
-/* ----------LAYOUT----------- */
+html {
+  font-size: 62.5%;
+}
 
-.icons{
-    float: right;
-    margin-top: 30px;
+body {
+  overflow-x: hidden;
+  font-size: 1.6rem;
+  width: 99.9vw;
+  max-width: 1500px;
+  background: url("/img/bg.png"), #b4b3b3b6;
+}
+
+li {
+  list-style: none;
+}
+
+header {
+  background-color: #b7384e;
+  color: white;
+  max-height: 17em;
+}
+header .inner-header {
+  max-width: 1500px;
+  position: relative;
+}
+header .logo img {
+  cursor: pointer;
+  min-width: 5em;
+  min-height: 5em;
+  width: 6em;
+  height: 6em;
+}
+header .avatar {
+  position: relative;
+  top: 0.7em;
+  height: 60%;
+  overflow: hidden;
+  border-radius: 50%;
+}
+header .avatar img {
+  cursor: pointer;
+  width: 3em;
+  height: 3em;
+}
+header div > nav {
+  position: relative;
+  right: 2rem;
+  bottom: -1em;
+}
+header a.logout-btn {
+  color: white;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+}
+header a.logout-btn :hover {
+  color: blue;
+}
+header .fa-sign-out-alt {
+  font-size: 1.5em;
+}
+header > div nav ul li a {
+  text-decoration: none;
+  position: relative;
+  color: white;
+  font-size: 2.3em;
+}
+header > div nav ul li:first-of-type a::before {
+  content: attr(data-count);
+  position: absolute;
+  display: flex;
+  top: 0.4em;
+  right: -0.2em;
+  justify-content: center;
+  align-items: center;
+  width: 1.2em;
+  height: 1.2em;
+  font-size: 0.5em;
+  border-radius: 50%;
+  border: 2px solid #b7384e;
+  font-weight: bolder;
+  font-family: "Arial Black";
+  color: #b7384e;
+  background-color: #fff;
+}
+header .days-panel {
+  color: #b7384e;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  background: #f1f1f1;
+  border: 2px solid #b7384e;
+  border-radius: 0 0 10em 10em;
+  transform: translate(-50%, 100%);
+  font-size: 1.2em;
+}
+header .days-panel ul li span {
+  cursor: pointer;
+}
+header .days-panel ul li:not(:last-of-type) {
+  border-right: 2px solid #b7384e;
+}
+header nav ul li.active {
+  border-radius: 40% 40% 0 0;
+  color: #b7384e;
+  background: white;
+}
+header nav ul li.active a {
+  color: #b7384e;
+}
+
+section.main-section {
+  max-width: 1500px;
+}
+
+footer {
+  background-color: #b7384e;
+  color: white;
+  height: 5em;
+  max-height: 17em;
+  color: rgba(255, 255, 255, 0.5);
+}
+footer .inner-footer {
+  max-width: 1500px;
+}
+
+.reservation_panel h5 {
+  font-size: 2em;
+}
+.reservation_panel .btn {
+  font-size: 1.6rem;
+}
+
+@media screen and (max-width: 500px) {
+  html {
+    font-size: 40%;
   }
-  
-  .bell{
-    color: white;
-    height: 100px;
-    font-size: xx-large;
-    width: 50px;
-  
+
+  .inner-header .days-panel {
+    width: 100%;
+    border-radius: 0 0 1.2em 1.2em;
   }
-  .users{
-    color: white;
-    font-size: xx-large;
-  }
-  
-  .conten{
-    height: 100vh;
-    background: url("/img/bg.png") ;  
+}
+@media screen and (min-width: 500px) and (max-width: 950px) {
+  html {
+    font-size: 50%;
   }
 
- .event{
-     background-color: #96283a;
-     height: 100px;
-
+  .inner-header .days-panel {
+    width: 80%;
+    border-radius: 0 0 1.2em 1.2em;
+  }
 }
 
-.event p{
-    text-align: center;
-    color: rgb(151, 150, 150);
-    padding-top: 40px;
-    
-}
-.block{
-    background-color: transparent;
-    height: 50px;
-    width: 550px;
-    border: 2px solid #b7384e;
-    border-radius: 30px;
-    display: flex;
-    margin-top: 10px;
-    margin: auto;
-    
-}
-
-.block ul ol{
-    display: inline;
-      
-}
-.block ul{
-    margin-top: 10px;
-}
-
-
-/* ----------------------ADMINISTRATION .blade.php------------------------------------------------ */
-h1{
-    text-align: center;
-}
-.the_block{
-    background-color: white;
-    height: 450px;
-    width: 800px;
-    border-radius: 30px;
-    box-shadow: rgb(218, 216, 216) 5px 5px 30px;
-    margin: auto;
-
-}
-
-.gestion p{
-    color:#b7384e ;
-    text-align: center;
-    margin-top: 25px;
-    padding-right: 5px;
-}
-
-.jours_concerné{
-    display: flex;
-    
-}
-
-.jours_concerné p{
-    
-    margin-left:15px;
-}
-
-.nbr input{
-    margin-left: 250px;
-    border: none;
-    background-color: rgb(218, 216, 216);
-    width: 300px;
-    border-radius:30px;
-    text-align:center;
-    margin-top:25px;
-}
-.Horaires{
-    margin-left: 200px;
-    margin-top: 25px;
-}
-.fin{
-    margin-top: 50px;
-    margin-left: 350px;
-}
-.debut{
-    margin-top: 45px;
-    margin-left: 350px; 
-}
-.valid input{
-    height: 30px; 
-    width: 180px;
-    border-radius: 30px;
-    border: none;
-    margin-left: 80px; 
-    text-align: center; 
-    font-size: 1.5em; 
-    color: white ;
-    margin-top: 50px;
-    background: linear-gradient(180deg, rgb(21, 11, 114), rgb(87, 121, 231));
-    font-style: oblique; 
-}
-
-
-
-    
-
-
-
-/* ----------------------------profil.blade.php----------------------------- */
-
-.first_block{
-    background-color: white;
-    height: 300px;
-    width: 800px;
-    border-radius: 30px;
-    box-shadow: rgb(218, 216, 216) 5px 5px 30px;
-    margin: auto;
-}
-
-
-.first_block p{
-    color:#b7384e ;
-    text-align: center;
-    margin-top: 25px;
-    padding-right: 5px;
-}
-
-.second_block{
-    background-color: white;
-    height: 300px;
-    width: 800px;
-    border-radius: 30px;
-    box-shadow: rgb(218, 216, 216) 5px 5px 30px;
-    margin: auto;
-    
-}
-
-
-.second_block p{
-    color:#b7384e ;
-    text-align: center;
-    margin-top: 25px;
-    padding-right: 5px;
-}
-
-
-
-
+/*# sourceMappingURL=layout.css.map */
