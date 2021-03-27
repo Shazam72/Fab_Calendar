@@ -18,7 +18,8 @@ class DatabaseSeeder extends Seeder
         $this->call([
             UserSeeder::class,
             StatutSeed::class,
-            FormasuivSeed::class
+            FormasuivSeed::class,
+            DaySeeder::class,
         ]);
         User::factory(10)->create();
     }

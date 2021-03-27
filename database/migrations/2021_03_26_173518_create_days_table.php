@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AjoutAvatar extends Migration
+class CreateDaysTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,11 @@ class AjoutAvatar extends Migration
      */
     public function up()
     {
-        
+        Schema::create('days', function (Blueprint $table) {
+            $table->string('day')->primary();
+            $table->string('day_french');
+            $table->timestamps();
+        });
     }
 
     /**
@@ -23,6 +27,6 @@ class AjoutAvatar extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('days');
     }
 }

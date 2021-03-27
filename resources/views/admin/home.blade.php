@@ -17,12 +17,9 @@
             <div class="day my-5">
                 <label for="day">Jour concerné:</label>
                 <select name="day" id="day">
-                    <option value="{{ strtotime('monday next week')  }}">Lundi</option>
-                    <option value="{{ strtotime('tuesday next week')  }}">Mardi</option>
-                    <option value="{{ strtotime('wednesday next week')  }}">Mercredi</option>
-                    <option value="{{ strtotime('thursday next week')  }}">Jeudi</option>
-                    <option value="{{ strtotime('friday next week')  }}">Vendredi</option>
-                    <option value="{{ strtotime('saturday next week')  }}">Samedi</option>
+                    @foreach($days as $day)
+                        <option value=" {{ $day->id}} ">{{ $day->day}}</option>
+                    @endforeach
                 </select>
             </div>
 

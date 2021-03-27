@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Day;
 use App\Models\Reservation_param;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -23,7 +24,7 @@ class AdminController extends UsersController
             $isAlready=Reservation_param::where('date',date('Y-m-d',request('day')))->first();
             if (is_null($isAlready)) {
                     Reservation_param::create([
-                    "date"=>date('Y-m-d',request('day')),
+                    "date"=>date('Y-m-d', strtotime("")),
                     "time_start"=>request('time_start'),
                     "time_end"=>request('time_end'),
                     "places"=>request('places'),
@@ -48,6 +49,7 @@ class AdminController extends UsersController
             'accountConfirmed'=>User::where('role','apprenant')->where('statut_id','2')->get(),
             'accountNotConfirmed'=>User::where('role','apprenant')->where('statut_id','1')->get(),
             'accountValidated'=>User::where('role','apprenant')->where('statut_id','3')->get(),
+            'days'=>Day::all(),
         ];
         return view('admin.home')->with($info);
     }

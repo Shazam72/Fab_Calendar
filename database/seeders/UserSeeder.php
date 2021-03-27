@@ -23,7 +23,7 @@ class UserSeeder extends Seeder
                 'formasuiv_id' => null,
                 'statut_id' => 3,
                 'role' => "admin",
-                'avatars' => 'avatars/dafault.png',
+                'avatars' => 'avatars/default.png',
                 'validation_token' => null,
                 'created_at' => now(),
                 'updated_at' => now()
@@ -35,7 +35,7 @@ class UserSeeder extends Seeder
                 'formasuiv_id' => 3,
                 'statut_id' => 3,
                 'role' => "apprenant",
-                'avatars' => 'avatars/dafault.png',
+                'avatars' => 'avatars/default.png',
                 'validation_token' => null,
                 'created_at' => now(),
                 'updated_at' => now(),

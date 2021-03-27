@@ -13,13 +13,10 @@ class Reservation_param extends Model
         'time_start',
         'time_end',
         'places',
+        'day',
         'date',
         'statut_id',
     ];
-
-    public function getOnlineReservation($query){
-        echo 12;
-    }
 
     public function reservation_apprenant(){
         return $this->hasMany('App\Models\Reservation_apprenant');
@@ -27,5 +24,9 @@ class Reservation_param extends Model
     public function statut()
     {
         return $this->belongsTo('App\Models\Statut');
+    }
+    public function day()
+    {
+        return $this->belongsTo('App\Models\Day');
     }
 }
