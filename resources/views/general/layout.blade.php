@@ -5,9 +5,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css')}}">
-    <link rel="stylesheet" href="{{ asset('fonts/css/all.css')}}">
-    <link rel="stylesheet" href="{{ asset('css/layout.css')}}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="{{ secure_asset('css/layout.css')}}">
     @yield('style_page')
     <title>@yield('title_page','Fab Calendar')</title>
 </head>
@@ -16,10 +16,10 @@
     <div class="inner-page">
         <header class="">
             <div class="inner-header container-fluid d-flex justify-content-between align-items-center m-auto">
-                <span class="logo"> <img src="{{asset('img/logo1.png')}}" alt="Logo Fab Calendar" data-target=" {{ route(auth()->user()->role.'_home') }} "></span>
+                <span class="logo"> <img src="{{secure_asset('img/logo1.png')}}" alt="Logo Fab Calendar" data-target=" {{ route(auth()->user()->role.'_home') }} "></span>
 
                 <div class="avatar d-flex justify-content-between align-items-center">
-                    <img src="{{ asset('/storage/'.auth()->user()->avatars) }}" alt="Avatar Utilisateur" data-target=" {{ route(auth()->user()->role.'_profile') }} ">
+                    <img src="{{ secure_asset('/storage/'.auth()->user()->avatars) }}" alt="Avatar Utilisateur" data-target=" {{ route(auth()->user()->role.'_profile') }} ">
                 </div>
 
                 <nav>
@@ -212,11 +212,11 @@
             </div>
         </footer>
     </div>
-    <script src="{{ asset('js/popper.min.js')}}"></script>
-    <script src="{{ asset('js/jquery-3.5.1.min.js')}}"></script>
-    <script src="{{ asset('js/bootstrap.bundle.min.js')}}"></script>
-    <script src="{{ asset('js/sweetalert.min.js')}}"></script>
-    <script src="{{ asset('js/layout.js')}}"></script>
+    <script src="{{ secure_asset('js/jquery-3.5.1.min.js')}}"></script>
+    <script src="{{ secure_asset('js/popper.min.js')}}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
+    <script src="{{ secure_asset('js/sweetalert.min.js')}}"></script>
+    <script src="{{ secure_asset('js/layout.js')}}"></script>
     @yield('script')
 </body>
 
