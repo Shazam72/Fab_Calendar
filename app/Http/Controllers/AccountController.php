@@ -147,11 +147,11 @@ class AccountController extends Controller
             if ($validator->fails())
                 return $validator->errors();
 
-            // try {
+            try {
                 $saved = $this->createApprenantAccount();
-            // } catch (\Throwable $th) {
-            //     return view('errors.DB');
-            // }
+            } catch (\Throwable $th) {
+                return $th;
+            }
             return $saved;
         } elseif (route('existAdmin') == request()->getUri()) {
             $validator = Validator::make(request()->all(), [
