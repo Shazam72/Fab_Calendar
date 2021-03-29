@@ -54,11 +54,11 @@ class AccountController extends Controller
             } else
                 return redirect(route(auth()->user()->role . '_home'));
         } else {
-            try {
+            // try {
                 $formations = Formasuiv::all();
-            } catch (\Throwable $e) {
-                return view('errors.DB');
-            }
+            // } catch (\Throwable $e) {
+            //     return view('errors.DB');
+            // }
             return view('general.login', [
                 'formations' => $formations
             ]);
@@ -92,11 +92,11 @@ class AccountController extends Controller
             if ($validator->fails())
                 return back()->withErrors($validator->errors());
 
-            try {
+            // try {
                 $this->modify_info();
-            } catch (\Throwable $th) {
-                return view('errors.DB');
-            }
+            // } catch (\Throwable $th) {
+            //     return view('errors.DB');
+            // }
             return redirect(route(auth()->user()->role . '_profile'));
         } elseif (route('login_form') == request()->getUri()) {
             $validator = Validator::make(request()->all(), [
@@ -147,11 +147,11 @@ class AccountController extends Controller
             if ($validator->fails())
                 return $validator->errors();
 
-            try {
+            // try {
                 $saved = $this->createApprenantAccount();
-            } catch (\Throwable $th) {
-                return view('errors.DB');
-            }
+            // } catch (\Throwable $th) {
+            //     return view('errors.DB');
+            // }
             return $saved;
         } elseif (route('existAdmin') == request()->getUri()) {
             $validator = Validator::make(request()->all(), [
@@ -164,11 +164,11 @@ class AccountController extends Controller
             if ($validator->fails())
                 return json_encode($validator->errors());
 
-            try {
+            // try {
                 $saved = $this->createAdminAccount();
-            } catch (\Throwable $th) {
-                return view('errors.DB');
-            }
+            // } catch (\Throwable $th) {
+            //     return view('errors.DB');
+            // }
             return json_encode([
                 'msg' => $saved,
                 'link' => route('login_form')
