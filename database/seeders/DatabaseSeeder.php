@@ -2,7 +2,7 @@
 
 namespace Database\Seeders;
 
-use App\Models\Formasuiv;
+
 use App\Models\User;
 use Illuminate\Database\Seeder;
 
@@ -21,6 +21,6 @@ class DatabaseSeeder extends Seeder
             FormasuivSeed::class,
             DaySeeder::class,
         ]);
-        User::factory(10)->create();
+        // User::factory(10)->create();
     }
 }
