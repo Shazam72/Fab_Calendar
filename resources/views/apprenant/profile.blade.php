@@ -1,7 +1,7 @@
 @extends('general.layout')
 @section('title_page','Profil - Fab Calendar')
 @section('style_page')
-<link rel="stylesheet" href="{{ asset('css/profile.css')}}">
+<link rel="stylesheet" href="{{ secure_asset('css/profile.css')}}">
 @endsection
 
 @section('profile_active','active')
@@ -14,7 +14,7 @@
         <hr>
         <div class="row card-body col-12 p-5">
             <div class="card-img col-sm-5 col-xs-12 m-auto d-flex justify-content-center align-items-center">
-                <img src="{{ asset('/storage/'.auth()->user()->avatars) }}" alt="">
+                <img src="{{ secure_asset('/storage/'.auth()->user()->avatars) }}" alt="">
             </div>
             <div class="d-flex flex-column justify-content-center card-text col-sm-6 col-xs-12 ">
                 <p>
