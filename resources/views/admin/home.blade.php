@@ -18,7 +18,7 @@
                 <label for="day">Jour concerné:</label>
                 <select name="day" id="day">
                     @foreach($days as $day)
-                        <option value=" {{ $day->id}} ">{{ $day->day}}</option>
+                        <option value=" {{ $day->id}} ">{{ $day->day_french}}</option>
                     @endforeach
                 </select>
             </div>

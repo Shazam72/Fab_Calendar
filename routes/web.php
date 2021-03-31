@@ -37,8 +37,11 @@ Route::group(['prefix' => 'admin'], function () {
         Route::get('home', [AdminController::class, 'home'])->name('admin_home');
         Route::view('profile', 'admin.profile')->name('admin_profile');
         Route::post('home', [AdminController::class, 'param']);
+
         Route::post('account_validation/{id}', [AdminController::class, 'handle_account'])->name('account_validation');
         Route::post('account_refuse/{id}', [AdminController::class, 'handle_account'])->name('account_refuse');
+
+        
         Route::get('disconnect', [AdminController::class, 'disconnect'])->name('admin_disconnect');
     });
     Route::get('', [AccountController::class, 'existAdmin'])->name('existAdmin');

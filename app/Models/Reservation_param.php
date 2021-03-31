@@ -13,7 +13,7 @@ class Reservation_param extends Model
         'time_start',
         'time_end',
         'places',
-        'day',
+        'day_id',
         'date',
         'statut_id',
     ];
