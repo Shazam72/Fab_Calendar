@@ -20,10 +20,10 @@ class AdminController extends UsersController
             return $validator->errors();
 
         if(request('time_end')>request('time_start')){
-            $isAlready=Reservation_param::where('date',date('Y-m-d',request('day')))->first();
+            $isAlready=Reservation_param::where('date',date('Y-m-d',strtotime(Day::where('id',request('day'))->first()->day.' next week')))->first();
             if (is_null($isAlready)) {
                     Reservation_param::create([
-                    "date"=>date('Y-m-d', strtotime(Day::where('day',request('day'))->get()->day.' next week')),
+                    "date"=>date('Y-m-d', strtotime(Day::where('id',request('day'))->first()->day.' next week')),
                     "day_id"=>request('day'),
                     "time_start"=>request('time_start'),
                     "time_end"=>request('time_end'),
