@@ -17,7 +17,7 @@ class CreateReservationParamsTable extends Migration
             $table->id();
             $table->time('time_start');
             $table->time('time_end');
-            $table->string('day');
+            $table->unsignedBigInteger('day_id');
             $table->date('date');
             $table->integer('places');
             $table->unsignedBigInteger('statut_id');
