@@ -14,7 +14,8 @@ class CreateDaysTable extends Migration
     public function up()
     {
         Schema::create('days', function (Blueprint $table) {
-            $table->string('day')->primary();
+            $table->id();
+            $table->string('day')->unique();
             $table->string('day_french');
             $table->timestamps();
         });
