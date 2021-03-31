@@ -21,6 +21,7 @@
                         <option value=" {{ $day->id}} ">{{ $day->day_french}}</option>
                     @endforeach
                 </select>
+                <p class="errors-msg text-danger day"></p>
             </div>
 
             <div class="nbr my-5">
