@@ -23,8 +23,8 @@ class AdminController extends UsersController
             $isAlready=Reservation_param::where('date',date('Y-m-d',request('day')))->first();
             if (is_null($isAlready)) {
                     Reservation_param::create([
-                    "date"=>date('Y-m-d', strtotime(request('day').' next week')),
-                    "day_id"=>Day::where('day',request('day'))->get()->id,
+                    "date"=>date('Y-m-d', strtotime(Day::where('day',request('day'))->get()->day.' next week')),
+                    "day_id"=>request('day'),
                     "time_start"=>request('time_start'),
                     "time_end"=>request('time_end'),
                     "places"=>request('places'),
