@@ -3,17 +3,12 @@
 use App\Http\Controllers\AccountController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ApprenantController;
-use App\Models\Day;
-use App\Models\Reservation_param;
 use Illuminate\Support\Facades\Route;
-use App\Models\User;
 
-Route::get('test', function () {
-    // dd(auth()->user()->statut->statut_name);
-    // App\Models\Reservation_param::create([ 'time_start'=>'12:00', 'time_end'=>'15:50','places'=>"12",'day'=>"monday", 'date'=>now(),'statut_id'=>"4"]);
-    $res=Reservation_param::find(1);
-dd($res->day());
-});
+// Route::get('test', function () {
+//     $user = new ApprenantController();
+//     dd($user->oneWeekParam());
+// });
 
 
 //Routes généralisées
@@ -38,10 +33,10 @@ Route::group(['prefix' => 'admin'], function () {
         Route::view('profile', 'admin.profile')->name('admin_profile');
         Route::post('home', [AdminController::class, 'param']);
 
-        Route::post('account_validation/{id}', [AdminController::class, 'handle_account'])->name('account_validation');
-        Route::post('account_refuse/{id}', [AdminController::class, 'handle_account'])->name('account_refuse');
+        Route::post('account_validation/{id}', [AdminController::class, 'handleAccount'])->name('account_validation');
+        Route::post('account_refuse/{id}', [AdminController::class, 'handleAccount'])->name('account_refuse');
 
-        
+
         Route::get('disconnect', [AdminController::class, 'disconnect'])->name('admin_disconnect');
     });
     Route::get('', [AccountController::class, 'existAdmin'])->name('existAdmin');
@@ -58,4 +53,6 @@ Route::group(['prefix' => 'apprenant', 'middleware' => 'auth'], function () {
     Route::view('profile', 'apprenant.profile')->name('apprenant_profile');
     Route::get('disconnect', [ApprenantController::class, 'disconnect'])->name('apprenant_disconnect');
     Route::get('home', [ApprenantController::class, 'home'])->name('apprenant_home');
+    Route::post('reserve', [ApprenantController::class, 'reserve'])->name('reserve');
+    Route::post('cancel', [ApprenantController::class, 'cancel'])->name('cancel_res');
 });

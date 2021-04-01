@@ -3,7 +3,7 @@
 @section('title_page','Administration - Fab Calendar')
 
 @section('style_page')
-<link rel="stylesheet" href="{{ secure_asset('css/admin.css')}}">
+<link rel="stylesheet" href="{{  asset('css/admin.css')}}">
 @endsection
 
 @section('content_page')
@@ -105,5 +105,5 @@
 @endsection
 
 @section('script')
-<script src="{{ secure_asset('js/admin.js')}}"></script>
+<script src="{{  asset('js/admin.js')}}"></script>
 @endsection

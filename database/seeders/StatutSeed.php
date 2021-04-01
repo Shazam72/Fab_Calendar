@@ -20,6 +20,7 @@ class StatutSeed extends Seeder
             ['statut_name' => 'validated'],
             ['statut_name' => 'online'],
             ['statut_name' => 'expired'],
+            ['statut_name' => 'canceled'],
         ]);
     }
 }

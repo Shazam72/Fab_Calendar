@@ -40,24 +40,29 @@ $(".form-reservation form").submit(function (e) {
             }
         });
 });
-$('.btn.valid,.btn.refuse').click(function(){
-    let form=new FormData();
-    form.append('_token',this.parentNode.querySelector('input[name="_token"]').value);
-    fetch(this.dataset.target,{
-        method:'POST',
+$(".btn.valid,.btn.refuse").click(function () {
+    let form = new FormData();
+    form.append(
+        "_token",
+        this.parentNode.querySelector('input[name="_token"]').value
+    );
+    fetch(this.dataset.target, {
+        method: "POST",
         body: form,
-    }).then(resp=>resp.text()).then((resp)=>{
-        if(this.classList.contains('refuse'))
-            $(this.parentNode.parentNode).remove();
-        else {
-            $(this).text('Validé')
-            $(this).css({
-                'color':'green',
-                'background':'none',
-                'border':'none',
-                'box-shadow':'none',
-                'pointer-events':'none'
-            })
-        }
-    });
+    })
+        .then((resp) => resp.text())
+        .then((resp) => {
+            if (this.classList.contains("refuse")) {
+                $(this.parentNode.parentNode).remove();
+            } else {
+                $(this).text("Validé");
+                $(this).css({
+                    "color": "green",
+                    "background": "none",
+                    "border": "none",
+                    "box-shadow": "none",
+                    "pointer-events": "none",
+                });
+            }
+        });
 });

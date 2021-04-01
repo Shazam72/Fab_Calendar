@@ -124,10 +124,10 @@ footer .inner-footer {
   max-width: 1500px;
 }
 
-.reservation_panel h5 {
+.reservation_modals h5 {
   font-size: 2em;
 }
-.reservation_panel .btn {
+.reservation_modals .btn {
   font-size: 1.6rem;
 }
 

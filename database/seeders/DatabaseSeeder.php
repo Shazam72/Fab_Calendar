@@ -21,6 +21,6 @@ class DatabaseSeeder extends Seeder
             FormasuivSeed::class,
             DaySeeder::class,
         ]);
-        // User::factory(10)->create();
+        User::factory(10)->create();
     }
 }
